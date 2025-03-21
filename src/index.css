@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 30% 98%;
+    --foreground: 225 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 25% 15%;
+
+    --primary: 215 80% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 30% 96.1%;
+    --secondary-foreground: 225 25% 15%;
+
+    --muted: 210 30% 96.1%;
+    --muted-foreground: 215 15% 46.9%;
+
+    --accent: 140 40% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 30% 98%;
+
+    --border: 214.3 25% 91.4%;
+    --input: 214.3 25% 91.4%;
+    --ring: 215 80% 45%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 225 30% 10%;
+    --foreground: 210 30% 98%;
+
+    --card: 225 30% 12%;
+    --card-foreground: 210 30% 98%;
+
+    --popover: 225 30% 12%;
+    --popover-foreground: 210 30% 98%;
+
+    --primary: 215 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 225 25% 18%;
+    --secondary-foreground: 210 30% 98%;
+
+    --muted: 225 25% 18%;
+    --muted-foreground: 215 20.2% 75%;
+
+    --accent: 140 40% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 30% 98%;
+
+    --border: 225 25% 18%;
+    --input: 225 25% 18%;
+    --ring: 215 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply transition-colors duration-200;
+  }
+  
+  body {
+    @apply bg-background text-foreground transition-colors duration-200;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg border border-white/30 dark:border-gray-800/40 shadow-lg;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl shadow-lg;
+  }
+  
+  .subtle-shadow {
+    @apply shadow-[0_8px_30px_rgb(0,0,0,0.06)];
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .heading-xl {
+    @apply text-4xl sm:text-5xl font-semibold tracking-tight text-balance;
+  }
+  
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-semibold tracking-tight text-balance;
+  }
+  
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-semibold tracking-tight text-balance;
+  }
+  
+  .heading-sm {
+    @apply text-xl sm:text-2xl font-semibold tracking-tight text-balance;
+  }
+  
+  .paragraph {
+    @apply text-base sm:text-lg text-foreground/80;
+  }
+  
+  .fine-text {
+    @apply text-sm text-foreground/70;
+  }
+  
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
